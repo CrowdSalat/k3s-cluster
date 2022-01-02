@@ -8,7 +8,7 @@ spec:
     namespace: cert-manager
     server: 'https://kubernetes.default.svc'
   source:
-    path: deployment/apps/02_argo-app-of-apps/
+    path: deployment/01_argo/
     repoURL: 'https://github.com/CrowdSalat/k3s-cluster'
     targetRevision: HEAD
   project: default
