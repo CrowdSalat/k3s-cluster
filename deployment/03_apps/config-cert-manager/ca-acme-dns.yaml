@@ -1,0 +1,29 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: cloudflare-dns-acme-ca
+  namespace: cert-manager
+  labels:
+    app: cloudflare-dns-acme
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: jan.weyrich@protonmail.com
+    privateKeySecretRef:
+      name: acme-account-private-key
+    solvers:
+    - dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            name: cloudflare-api-token-secret
+            key: api-token
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: cloudflare-api-token-secret
+  namespace: cert-manager
+spec:
+  encryptedData:
+    api-token: AgANPxpavnU8IxYaWCNBrWsQ6sGnmbuwe/aWf6JQYPYGd0mrz/UGwlFa0WiHPJJtSvHCyeL1z8I9zok9Rju88l/WorMNMrplfFTlEoBvCCWeKYo+kn9oRD2Uw7c6fa5ki28Ubo36+j1tNCdZ5emz6HzmFjh4siHBaHENrP+fuI4FVs5sOkxdIUvwP4NQj+3QXXrYH8D5MlBCUXM6OqwIRvpzVDoxvFhgcLaFj4GmouU65ol3f0ogTjnAqLkJdggsJUpVTUVi7dGKwWvTeqzfDRZf20KUS66JL5XhNk+MrBfyHPdnF7v9g/HEE82Scqkoj1+tw7kkIKMgsCOjhAiDcM4M6cyv6BQtcDXMjaDPmK5DRRZNTGN5kYr/8J9ItYn39cxz827KnYrYX0nVh3TlP0LbbCiqHg12aL5tR56elIyaqzeazdT8YM/K4SgOO0UcxZOW/LjhGrxVZcZPCF3rbi/2zCi/CRyQXMICMSmsmoud5WL9wWoj9+hiQtS9r7iB3tfMtOiWYEl58WCn3gziLKWnSnC9pUSpWEyw5mrtmUks6Vnfcx+Rcg/F6dwmce4jE5SLPBLN42aH5Ljo9OjEfMvU/3BregwAr3I5Z0Hk681Qap/a/lDd1lX2oW59+w6HY5aXOoXNQI7LKNxxGTdYEZyWqnPDpEzX4VwqqbeZnvHoSKKdZKf5XJCSDZgXgCPUD6XUa69mrNZQUAFA+7ntzmde5hRQgqXZ1d4zTDDGbe1dAq99Nchk+Loo        

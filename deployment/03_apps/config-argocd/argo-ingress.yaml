@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-ingress
+  namespace: argocd
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-dns-acme-ca
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: argocd.weyrich.dev
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - argocd.weyrich.dev
+    secretName: argocd-secret
