@@ -1,6 +1,6 @@
 # Server Setup
 
-[argocd](argocd.weyrich.dev)
+[argocd](https://argocd.weyrich.dev)
 
 ## Infrastructure
 

@@ -37,7 +37,7 @@ kubectl -n argocd delete secret argocd-initial-admin-secret
 ```
 
 ### sealedSecrets
-s
+
 - [Bitnami sealedSecrets](https://github.com/bitnami-labs/sealed-secrets) allows you to save encrypted secrets in your repository which will get decrypted inside of the k8s cluster.
 - It consists of a [kubeseal](https://github.com/bitnami-labs/sealed-secrets#usage) cli and a operator which runs in the cluster. The installation is described [here](https://github.com/bitnami-labs/sealed-secrets/releases)
 - check [release notes](https://github.com/bitnami-labs/sealed-secrets/blob/main/RELEASE-NOTES.md) before updating
