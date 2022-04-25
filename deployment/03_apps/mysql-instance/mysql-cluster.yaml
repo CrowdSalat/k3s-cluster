@@ -1,0 +1,7 @@
+apiVersion: mysql.oracle.com/v2alpha1
+kind: InnoDBCluster
+metadata:
+  name: mysql-server
+spec:
+  secretName: mysql-server-credentials
+  instances: 1
