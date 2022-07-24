@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kvb-rad-backend
+spec:
+  destination:
+    namespace: apps
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: spring-boot-helm-chart
+    helm:
+      parameters:
+      - name: image.repository
+        value: crowdsalat/kvb-rad
+      - name: image.tag
+        value: v.0.4.0
+      - name: nameOverride
+        value: kvb-rad-backend
+    repoURL: https://viadee.github.io/spring-boot-helm-chart
+    targetRevision: 0.5.0
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
