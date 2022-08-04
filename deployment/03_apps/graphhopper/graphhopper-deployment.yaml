@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: apps
+  labels:
+    app: graphhopper-server
+  name: graphhopper-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graphhopper-server
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: graphhopper-server
+    spec:
+      containers:
+      - image: crowdsalat/graphhopper-cologne-bike
+        name: graphhopper-cologne-bike
+        resources: 
+          requests:
+            memory: "600Mi"
+            cpu: "100m"
+          limits:
+            memory: "900Mi"
+            cpu: "500m"
