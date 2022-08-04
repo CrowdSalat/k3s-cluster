@@ -19,6 +19,16 @@ spec:
       containers:
       - image: crowdsalat/graphhopper-cologne-bike
         name: graphhopper-cologne-bike
+        startupProbe:
+          httpGet:
+            path: /health
+            port: 8989
+          failureThreshold: 10
+          periodSeconds: 20
+        livenessProbe:
+          httpGet: 
+            path: /health
+            port: 8989
         resources: 
           requests:
             memory: "600Mi"
