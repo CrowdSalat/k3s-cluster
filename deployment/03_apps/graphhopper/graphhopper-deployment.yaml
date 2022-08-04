@@ -10,7 +10,8 @@ spec:
   selector:
     matchLabels:
       app: graphhopper-server
-  strategy: {}
+  strategy: 
+    type: Recreate
   template:
     metadata:
       labels:
