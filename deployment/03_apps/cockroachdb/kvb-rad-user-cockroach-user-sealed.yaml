@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: cockroach-user-kvb-rad-user
+  namespace: apps
+spec:
+  encryptedData:
+    spring.datasource.password: AgBmVceMn/zyh1WNVjGpgXAiq1X7zExyNHs7KIusrB1KAWJr7q/5trRRQSMoBBFOfeVKs0yMMfacoKoWWOgO0oGzMvCBEXnBlQdQJHiC4L4mMFLGRKhPGD+npC9s9ht+J1ooMkpCe58xtNIzdQlzPXb41UMXyflxgjIEJM0VtZc2YgsNcInn4xZZB/+gqV9ejMUdumkNOe8Is+iQzeeUNWw+41buHdBvZP4ExoCx3DewK/rEjGrwBoOi5Ckl0hXxVJcQ9Tn1OcizR2Z6Fm4vYEtdVggtTsMAf2dAxKyEVxHiBAhIF8MAoaH+8daZythgeDABlOSh4H3gq9n8vqO1kMnrMxyR7g2x39Zjoda0tpZ3YJwAvMW0HInBfDGeZgjSSjkHixQLZErwnZqnePmkTxHen9udl9/OtE259q+fFYCkuiwL4TUQw2M3qVzVmQSFY6lxKZVcNlesU2uH0e1vHxHDz2r6ZpC6VJWjbyE/xyX+PZu5jK64zWfF8LT4Wmk6teZdSafILrsDyCddg3rTdSv5RvneUiVkMAmbK83fakB5jrl+nXectId+ofOQAt2JrQ0yn1PPNhlO1HpFJvmWk3x1o+1XqE5xG16vU/g0dyS62L06zspOYLdXwTnp8p8Tlo1yn40ezpw0K17EPLg0bTjloHrFCgU6Og7nNREfxyJ60L94QYR/5jykEFH5O2oQowuSNL8d8hbLjXqXzy5TmZCX2jP31LSh
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: cockroach-user-kvb-rad-user
+      namespace: apps
+
