@@ -14,9 +14,15 @@ spec:
       - name: image.repository
         value: crowdsalat/kvb-rad
       - name: image.tag
-        value: v.0.4.0
+        value: v.0.5.0-pre
       - name: nameOverride
         value: kvb-rad-backend
+      - name: config.secretRef[0]
+        value: cockroach-user-kvb-rad-user
+      - name: config.plain
+        value: |-
+          api.graphhopper.route.url: graphhopper-server:8989/route
+          spring.datasource.username: kvb-rad
     repoURL: https://viadee.github.io/spring-boot-helm-chart
     targetRevision: 0.5.0
   syncPolicy:
