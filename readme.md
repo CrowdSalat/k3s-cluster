@@ -6,6 +6,12 @@
 
 Installation of VLS, k3s is described [here](./infrastructure/readme.md).
 
+Download k3s config:
+
+```
+scp -T root@116.203.117.157:"/etc/rancher/k3s/k3s.yaml" ~/Desktop/k3s.yaml
+```
+
 ## Deployment
 
 
