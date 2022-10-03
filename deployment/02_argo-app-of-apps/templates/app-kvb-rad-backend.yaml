@@ -22,7 +22,9 @@ spec:
       - name: config.plain
         value: |-
           api.graphhopper.route.url: graphhopper-server:8989/route
+          spring.jpa.database: POSTGRESQL
           spring.datasource.username: kvb-rad
+          spring.datasource.url: jdbc:postgresql://free-tier13.aws-eu-central-1.cockroachlabs.cloud:26257/kvbbike-db?options=--cluster%3Dcrowdsalat-1065&sslmode=verify-full
     repoURL: https://viadee.github.io/spring-boot-helm-chart
     targetRevision: 0.5.0
   syncPolicy:
