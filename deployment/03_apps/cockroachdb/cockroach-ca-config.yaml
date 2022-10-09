@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cockroach-postgres-ca
+  namespace: apps
 data:
   # needs to be mounted to: $HOME/.postgresql/root.crt
   root.crt: |-
