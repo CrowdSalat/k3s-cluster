@@ -14,7 +14,7 @@ spec:
       - name: image.repository
         value: crowdsalat/kvb-rad
       - name: image.tag
-        value: v.0.5.0-pre
+        value: v.0.6.1-pre
       - name: nameOverride
         value: kvb-rad-backend
       - name: config.secretRef[0]
