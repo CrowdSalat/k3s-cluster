@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kvb-rad-backend
+  name: kvb-rad-frontend
 spec:
   destination:
     namespace: apps
