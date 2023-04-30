@@ -11,18 +11,18 @@ spec:
     chart: spring-boot-helm-chart
     helm:
       values: |
-          nameOverride: kvb-rad-backend
-           image: 
-            repository: crowdsalat/kvb-rad-ui
-            tag: "v.0.6.1-pre"
-          config.secretRef:
-            - cockroach-user-kvb-rad-user
-          ingress:
-            enabled: true
-            hosts:
-              - host: kvb.weyrich.dev
-                paths:
-                  - path: /api
+        nameOverride: kvb-rad-backend
+        image: 
+        repository: crowdsalat/kvb-rad-ui
+        tag: "v.0.6.1-pre"
+        config.secretRef:
+        - cockroach-user-kvb-rad-user
+        ingress:
+        enabled: true
+        hosts:
+          - host: kvb.weyrich.dev
+            paths:
+              - path: /api
       parameters:
       - name: config.plain
         value: |-
