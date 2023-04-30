@@ -1,3 +1,4 @@
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -27,7 +28,7 @@ spec:
     port: 80
   selector:
     app: whoami
- ---
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
