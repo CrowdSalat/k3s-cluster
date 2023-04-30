@@ -6,13 +6,16 @@ metadata:
     cert-manager.io/cluster-issuer: cloudflare-dns-acme-ca
 spec:
   rules:
-  - host: whoami.weyrich.dev
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: whoami-service
-          servicePort: http
+    - host: whoami.weyrich.dev
+      http:
+        paths:
+          - backend:
+              service:
+                name: whoami-service
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
   tls:
     - hosts:
         - whoami.weyrich.dev
