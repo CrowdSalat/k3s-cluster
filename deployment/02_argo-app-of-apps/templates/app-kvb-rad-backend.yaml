@@ -8,31 +8,28 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: spring-boot-helm-chart
+    chart: springboot-helm-chart
     helm:
       values: |
         nameOverride: kvb-rad-backend
         image: 
           repository: crowdsalat/kvb-rad
           tag: "v.0.6.1-pre"
-        config:
-          secretRef:
-            - cockroach-user-kvb-rad-user
+        secretRef:
+          - cockroach-user-kvb-rad-user
+        properties:
+          api.graphhopper.route.url: http://graphhopper-server:8989/route
+          spring.jpa.database: POSTGRESQL
+          spring.datasource.username: kvb-rad
+          spring.datasource.url: jdbc:postgresql://free-tier13.aws-eu-central-1.cockroachlabs.cloud:26257/kvbbike-db?options=--cluster%3Dcrowdsalat-1065&sslmode=verify-full
         ingress:
           enabled: true
           hosts:
             - host: kvb.weyrich.dev
               paths:
                 - path: /api
-      parameters:
-      - name: config.plain
-        value: |-
-          api.graphhopper.route.url: http://graphhopper-server:8989/route
-          spring.jpa.database: POSTGRESQL
-          spring.datasource.username: kvb-rad
-          spring.datasource.url: jdbc:postgresql://free-tier13.aws-eu-central-1.cockroachlabs.cloud:26257/kvbbike-db?options=--cluster%3Dcrowdsalat-1065&sslmode=verify-full
-    repoURL: https://viadee.github.io/spring-boot-helm-chart
-    targetRevision: 0.5.0
+    repoURL: https://viadee.github.io/springboot-helm-chart
+    targetRevision: 1.1.0
   syncPolicy:
     syncOptions:
       - ApplyOutOfSyncOnly=true
