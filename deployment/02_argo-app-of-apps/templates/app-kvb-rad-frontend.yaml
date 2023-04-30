@@ -11,7 +11,7 @@ spec:
     chart: application
     helm:
       values: |
-        applicationName: kvb-rad-ui
+        applicationName: kvb-rad-frontend
         deployment:
           image: 
             repository: crowdsalat/kvb-rad-ui
