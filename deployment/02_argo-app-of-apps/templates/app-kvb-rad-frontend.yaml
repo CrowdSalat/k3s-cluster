@@ -23,6 +23,10 @@ spec:
           hosts: 
             - host: kvb.weyrich.dev
           servicePort: 8080
+        rbac:
+          enabled: true
+          serviceAccount:
+            enabled: true
     repoURL: https://stakater.github.io/stakater-charts
     targetRevision: 2.1.13
   syncPolicy:
