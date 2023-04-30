@@ -26,8 +26,8 @@ spec:
           servicePort: 8080
           tls:
             - hosts:
-              - argocd.weyrich.dev
-              secretName: kvb-rad-backend-secret
+              - kvb.weyrich.dev
+              secretName: kvb-rad-frontend-secret
           annotations:
             cert-manager.io/cluster-issuer: cloudflare-dns-acme-ca
             kubernetes.io/ingress.class: traefik
