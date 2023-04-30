@@ -13,10 +13,10 @@ spec:
       values: |
         nameOverride: kvb-rad-backend
         image: 
-        repository: crowdsalat/kvb-rad-ui
-        tag: "v.0.6.1-pre"
+          repository: crowdsalat/kvb-rad-ui
+          tag: "v.0.6.1-pre"
         config.secretRef:
-        - cockroach-user-kvb-rad-user
+          - cockroach-user-kvb-rad-user
         ingress:
           enabled: true
           hosts:
