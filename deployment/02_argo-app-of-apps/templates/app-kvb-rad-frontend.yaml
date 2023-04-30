@@ -19,6 +19,10 @@ spec:
         value: "kvb-rad-frontend"
       - name: containerPorts.http
         value: "8080"
+      - name: mongodb.enabled
+        value: "false"
+      - name: command
+        value: "http-server dist"  
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 19.1.7
   syncPolicy:
