@@ -15,8 +15,9 @@ spec:
         image: 
           repository: crowdsalat/kvb-rad
           tag: "v.0.6.1-pre"
-        config.secretRef:
-          - cockroach-user-kvb-rad-user
+        config:
+          secretRef:
+            - cockroach-user-kvb-rad-user
         ingress:
           enabled: true
           hosts:
