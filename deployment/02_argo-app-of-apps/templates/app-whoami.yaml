@@ -8,7 +8,7 @@ spec:
     namespace: app
     server: 'https://kubernetes.default.svc'
   source:
-    path: deployment/03_apps/whoami/whoami.yaml
+    path: deployment/03_apps/whoami/
     repoURL: 'https://github.com/CrowdSalat/k3s-cluster'
     targetRevision: HEAD
   project: default
