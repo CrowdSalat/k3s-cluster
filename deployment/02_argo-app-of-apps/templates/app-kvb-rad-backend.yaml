@@ -35,7 +35,7 @@ spec:
           tls:
             - hosts:
               - argocd.weyrich.dev
-              secretName: kvb-rad-backend
+              secretName: kvb-rad-backend-secret
           annotations:
             cert-manager.io/cluster-issuer: cloudflare-dns-acme-ca
             kubernetes.io/ingress.class: traefik
