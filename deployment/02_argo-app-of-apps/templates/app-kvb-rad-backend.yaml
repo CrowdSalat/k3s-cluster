@@ -31,6 +31,14 @@ spec:
                   pathType: Prefix
                 - path: /bikes
                   pathType: Prefix
+            # configure certmanager: https://cert-manager.io/docs/usage/ingress/#how-it-works
+            tls:
+              - hosts:
+                - argocd.weyrich.dev
+                secretName: kvb-rad-backend
+            annotations:
+              cert-manager.io/cluster-issuer: cloudflare-dns-acme-ca
+              kubernetes.io/ingress.class: traefik
     repoURL: https://viadee.github.io/springboot-helm-chart
     targetRevision: 1.1.0
   syncPolicy:
