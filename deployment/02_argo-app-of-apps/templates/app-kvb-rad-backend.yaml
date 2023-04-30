@@ -27,7 +27,10 @@ spec:
           hosts:
             - host: kvb.weyrich.dev
               paths:
-                - path: /api
+                - path: /tours
+                  pathType: Prefix
+                - path: /bikes
+                  pathType: Prefix
     repoURL: https://viadee.github.io/springboot-helm-chart
     targetRevision: 1.1.0
   syncPolicy:
