@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whoami-ingress
+  annotation:
+    cert-manager.io/cluster-issuer: cloudflare-dns-acme-ca
+spec:
+  rules:
+  - host: whoami.weyrich.dev
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: whoami-service
+          servicePort: http
+  tls:
+    - hosts:
+        - whoami.weyrich.dev
+      secretName: whoami-ingress-secret
