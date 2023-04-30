@@ -38,7 +38,6 @@ spec:
               secretName: kvb-rad-backend-secret
           annotations:
             cert-manager.io/cluster-issuer: cloudflare-dns-acme-ca
-            kubernetes.io/ingress.class: traefik
     repoURL: https://viadee.github.io/springboot-helm-chart
     targetRevision: 1.1.0
   syncPolicy:
