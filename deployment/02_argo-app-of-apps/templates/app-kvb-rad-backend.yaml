@@ -18,11 +18,11 @@ spec:
         config.secretRef:
         - cockroach-user-kvb-rad-user
         ingress:
-        enabled: true
-        hosts:
-          - host: kvb.weyrich.dev
-            paths:
-              - path: /api
+          enabled: true
+          hosts:
+            - host: kvb.weyrich.dev
+              paths:
+                - path: /api
       parameters:
       - name: config.plain
         value: |-
