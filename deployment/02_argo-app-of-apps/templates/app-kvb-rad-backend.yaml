@@ -10,15 +10,20 @@ spec:
   source:
     chart: spring-boot-helm-chart
     helm:
+      values: |
+          nameOverride: kvb-rad-backend
+           image: 
+            repository: crowdsalat/kvb-rad-ui
+            tag: "v.0.6.1-pre"
+          config.secretRef:
+            - cockroach-user-kvb-rad-user
+          ingress:
+            enabled: true
+            hosts:
+              - host: kvb.weyrich.dev
+                paths:
+                  - path: /api
       parameters:
-      - name: image.repository
-        value: crowdsalat/kvb-rad
-      - name: image.tag
-        value: v.0.6.1-pre
-      - name: nameOverride
-        value: kvb-rad-backend
-      - name: config.secretRef[0]
-        value: cockroach-user-kvb-rad-user
       - name: config.plain
         value: |-
           api.graphhopper.route.url: http://graphhopper-server:8989/route
