@@ -10,9 +10,19 @@ spec:
   source:
     chart: application
     helm:
-      fileParameters:
-      - name: config
-        path: files/config.json
+      values: |
+        applicationName: kvb-rad-ui
+        deployment:
+          image: 
+            repository: crowdsalat/kvb-rad-ui
+            tag: "0.13"
+        service.ports: 8080
+        ingress:
+          enabled: true
+          ingressClassName: traeffik
+          hosts: 
+            - host: kvb.weyrich.dev
+          servicePort: 8080
     repoURL: https://stakater.github.io/stakater-charts
     targetRevision: 2.1.13
   syncPolicy:
