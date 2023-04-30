@@ -21,7 +21,6 @@ spec:
         service.ports: 8080
         ingress:
           enabled: true
-          ingressClassName: traeffik
           hosts: 
             - host: kvb.weyrich.dev
           servicePort: 8080
