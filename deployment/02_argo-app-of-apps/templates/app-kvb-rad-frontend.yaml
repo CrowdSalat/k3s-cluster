@@ -8,23 +8,13 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: node
+    chart: application
     helm:
-      parameters:
-      - name: image.repository
-        value: "crowdsalat/kvb-rad-ui"
-      - name: image.tag
-        value: "0.13"
-      - name: nameOverride
-        value: "kvb-rad-frontend"
-      - name: containerPorts.http
-        value: "8080"
-      - name: mongodb.enabled
-        value: "false"
-      - name: command
-        value: "http-server dist"  
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 19.1.7
+      fileParameters:
+      - name: config
+        path: files/config.json
+    repoURL: https://stakater.github.io/stakater-charts
+    targetRevision: 2.1.13
   syncPolicy:
     syncOptions:
       - ApplyOutOfSyncOnly=true
