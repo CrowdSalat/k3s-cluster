@@ -14,7 +14,7 @@ spec:
         nameOverride: kvb-rad-backend
         image: 
           repository: crowdsalat/kvb-rad
-          tag: "v.0.6.1-pre"
+          tag: "v1.1.0"
         secretRef:
           - cockroach-user-kvb-rad-user
         properties:
