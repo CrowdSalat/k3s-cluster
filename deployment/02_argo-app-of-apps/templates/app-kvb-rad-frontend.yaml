@@ -15,7 +15,7 @@ spec:
         deployment:
           image: 
             repository: crowdsalat/kvb-rad-ui
-            tag: "0.13"
+            tag: "v1.0.0"
           containerSecurityContext:
             runAsNonRoot: false
         service.ports: 8080
